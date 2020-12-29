@@ -1,0 +1,7 @@
+{
+  "name": "AsociacionFront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
