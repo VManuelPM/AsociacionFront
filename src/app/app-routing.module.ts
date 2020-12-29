@@ -1,15 +1,22 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { DetalleComponent } from './components/detalle/detalle.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'personas',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'detalle/:id',
+    component: DetalleComponent
+  },
+  {
+    path: 'personas',
+    component: HomeComponent
   }
 ];
 

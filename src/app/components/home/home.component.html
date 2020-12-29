@@ -1,0 +1,11 @@
+<ion-app>
+  <ion-content>
+
+    <ion-toolbar>
+      <ion-searchbar placeholder="Buscar" #buscar (keyup)="find(buscar.value)"></ion-searchbar>
+    </ion-toolbar>
+
+    <app-tarjeta [letraRecibida] = "letra"></app-tarjeta>
+    
+  </ion-content>
+</ion-app>
