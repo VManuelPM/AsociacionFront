@@ -1,21 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
+  letra: string = "";
 
-  letra: string = '';
-
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
-  find(letra: string){
+  find(letra: string) {
     this.letra = letra;
-}
+  }
 
-
+  salir() {
+    if(sessionStorage.getItem("token")){
+      sessionStorage.removeItem("token");
+      this.router.navigateByUrl("/login");
+    }
+  }
 }

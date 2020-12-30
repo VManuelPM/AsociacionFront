@@ -2,6 +2,7 @@
   <ion-content>
 
     <ion-toolbar>
+      <ion-button color="danger" slot="end" (click)="salir()"><ion-icon name="exit-outline"></ion-icon></ion-button>
       <ion-searchbar placeholder="Buscar" #buscar (keyup)="find(buscar.value)"></ion-searchbar>
     </ion-toolbar>
 

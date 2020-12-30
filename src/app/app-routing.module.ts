@@ -1,8 +1,10 @@
 import { NgModule, Component } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes, CanActivate } from '@angular/router';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,11 +14,17 @@ const routes: Routes = [
   },
   {
     path: 'detalle/:id',
-    component: DetalleComponent
+    component: DetalleComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'personas',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   }
 ];
 

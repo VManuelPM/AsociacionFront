@@ -1,0 +1,21 @@
+<div class="login">
+  
+  <div class="img">
+    <img src="../../../assets/icon/login.png" alt="login" width="150px" height="150px">
+  </div>
+  
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input required formControlName="usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input required type="password" formControlName="pass_usuario"></ion-input>
+    </ion-item>
+    <div class="boton">
+      <ion-button expand="full" color="success" type="submit">Entrar</ion-button>
+    </div>
+  </form>  
+
+</div>
