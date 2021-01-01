@@ -19,4 +19,8 @@ export class PersonaService {
   getPersonaById(idPersona: number){
     return this.http.get<Persona>(`${this.baseUrl}/personas/${idPersona}`);
   }
+
+  savePersona(persona: Persona){
+    return this.http.post(`${this.baseUrl}/Persona`, persona);
+  }
 }

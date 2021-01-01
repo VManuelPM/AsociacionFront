@@ -1,0 +1,64 @@
+<ion-content>
+  <ion-button color="success" (click)="atras()">
+    <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+    Volver
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Añadir afiliado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="form" (ngSubmit)="add()">
+        <ion-item>
+          <ion-label position="floating">DNI</ion-label>
+          <ion-input formControlName="dni_persona" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Primer Nombre</ion-label>
+          <ion-input type="text" formControlName="primer_nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Segundo Nombre</ion-label>
+          <ion-input type="text" formControlName="segundo_nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Primer Apellido</ion-label>
+          <ion-input type="text" formControlName="primer_apellido" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Segundo Apellido</ion-label>
+          <ion-input type="text" formControlName="segundo_apellido" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fecha de nacimiento</ion-label>
+          <ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc" formControlName="fecha_nacimiento"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Dirección de residencia</ion-label>
+          <ion-input formControlName="direccion_residencia"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Ciudad de residencia</ion-label>
+          <ion-input value="Almería" formControlName="ciudad_residencia"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono celular</ion-label>
+          <ion-input type="number" formControlName="telefono_celular"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Profesión</ion-label>
+          <ion-input type="text" formControlName="profesion"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Valor Pago</ion-label>
+          <ion-input type="number" formControlName="valor_pago"></ion-input>
+        </ion-item>
+
+        <div>
+          <ion-button expand="full" color="success" type="submit">Añadir</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

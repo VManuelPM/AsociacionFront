@@ -16,10 +16,11 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 
 @NgModule({
-  declarations: [AppComponent, TarjetaComponent, DetalleComponent, HomeComponent, LoginComponent, FilterPipe ],
+  declarations: [AppComponent, TarjetaComponent, DetalleComponent, HomeComponent, LoginComponent, FormularioComponent, FilterPipe ],
   entryComponents: [],
   imports: [
     BrowserModule,

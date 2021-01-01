@@ -5,6 +5,7 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'agregar',
+    component: FormularioComponent,
+    canActivate:[AuthGuard]
   }
 ];
 
