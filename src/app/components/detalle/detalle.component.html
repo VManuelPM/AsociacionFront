@@ -17,47 +17,57 @@
   </ion-card-header>
 
   <ion-card-content>
+    <form [formGroup]="form" (ngSubmit)="edit(persona)">
+      <ion-item>
+        <ion-label position="fixed">Dirección:</ion-label>
+        <ion-input type="text" formControlName="direccion_residencia"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="fixed">Dirección:</ion-label>
-      <ion-input>{{persona.direccion_residencia}}</ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Ciudad:</ion-label>
+        <ion-input formControlName="ciudad_residencia"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="fixed">Móvil:</ion-label>
-      <ion-input>{{persona.telefono_celular}}</ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Móvil:</ion-label>
+        <ion-input formControlName="telefono_celular"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label class="label-fecha" position="floating" color="danger" *ngIf="validarFecha(persona.fecha_vencimiento)">
-        Fecha de Pago:
-      </ion-label>
-      <ion-label class="label-fecha" position="floating" color="success" *ngIf="!validarFecha(persona.fecha_vencimiento)">
-        Fecha de Pago:
-      </ion-label>
-      
-        <ion-datetime  color="danger" value="{{persona.fecha_vencimiento | date }}">
-          {{persona.fecha_vencimiento | date }}
+      <ion-item>
+        <ion-label class="label-fecha" position="floating" color="danger"
+          *ngIf="validarFecha(persona.fecha_vencimiento)">
+          Fecha de vencimiento:
+        </ion-label>
+        <ion-label class="label-fecha" position="floating" color="success"
+          *ngIf="!validarFecha(persona.fecha_vencimiento)">
+          Fecha de vencimiento:
+        </ion-label>
+
+        <ion-datetime  formControlName="fecha_vencimiento" color="danger">
         </ion-datetime>
-    
-    </ion-item>
 
-    <ion-item>
-      <ion-label position="fixed">Profesión:</ion-label>
-      <ion-input>{{persona.profesion}}</ion-input>
-    </ion-item>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Fecha vinculación:</ion-label>
-      <ion-label>{{persona.fecha_vinculacion | date}}</ion-label>
-    </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Profesión:</ion-label>
+        <ion-input formControlName="profesion"></ion-input>
+      </ion-item>
 
-    <ion-item *ngFor="let detalle of persona.detalle_pagos; let i = index">
-      <ion-label>Pago N° {{ i +1 }}</ion-label>
-      <ion-label>{{detalle.fecha_pago | date }}</ion-label>
-      <ion-badge color="success">€ {{detalle.valor_pago}}</ion-badge>
-    </ion-item>
+      <ion-item>
+        <ion-label>Fecha vinculación:</ion-label>
+        <ion-label>{{persona.fecha_vinculacion | date}}</ion-label>
+      </ion-item>
 
+      <ion-item *ngFor="let detalle of persona.detalle_pagos; let i = index">
+        <ion-label>Pago N° {{ i +1 }}</ion-label>
+        <ion-label>{{detalle.fecha_pago | date }}</ion-label>
+        <ion-badge color="success">€ {{detalle.valor_pago}}</ion-badge>
+      </ion-item>
+
+      <div>
+        <ion-button expand="full" color="primary" type="submit">Actualizar</ion-button>
+      </div>
+    </form>
   </ion-card-content>
 
 </ion-card>

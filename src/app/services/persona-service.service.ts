@@ -23,4 +23,9 @@ export class PersonaService {
   savePersona(persona: Persona){
     return this.http.post(`${this.baseUrl}/Persona`, persona);
   }
+
+  putPersona(persona: Persona){
+    console.log(persona.id_persona);
+    return this.http.put(`${this.baseUrl}/personas/${persona.id_persona}`, persona);
+  }
 }
