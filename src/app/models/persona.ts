@@ -15,5 +15,5 @@ export interface Persona {
     fecha_vinculacion: Date;
     fecha_vencimiento: Date;
     fecha_salida: Date;
-    detallePagos: Array<DetallePagos>;
+    detalle_pagos: DetallePagos[];
 }

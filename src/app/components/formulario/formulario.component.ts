@@ -52,7 +52,7 @@ export class FormularioComponent implements OnInit {
       fecha_vinculacion: this.form.get(["fecha_vinculacion"]).value,
       fecha_vencimiento: this.form.get(["fecha_vencimiento"]).value,
       fecha_salida: this.form.get(["fecha_salida"]).value,
-      detallePagos: [
+      detalle_pagos: [
         {
           valor_pago: this.form.get(["valor_pago"]).value,
           fecha_pago: new Date(),
@@ -64,7 +64,7 @@ export class FormularioComponent implements OnInit {
       res => {
         Swal.fire(
           'Persona Añadida',
-          'Usuario o password incorrectos',
+          'Exito añadiendo persona',
           'success'
         );
         this.router.navigateByUrl("/personas");

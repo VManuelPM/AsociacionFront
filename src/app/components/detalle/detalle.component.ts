@@ -28,9 +28,8 @@ export class DetalleComponent implements OnInit {
   getPersona(idPesona: number){
     this.personaService.getPersonaById(idPesona).subscribe(
       res => {
-        console.log(res);
+        console.log("respuesta", res);
         this.persona = res;
-  
       },
       err => {
 
